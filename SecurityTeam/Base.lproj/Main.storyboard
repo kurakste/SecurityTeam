@@ -1,24 +1,861 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="calibril.ttf">
+            <string>Calibri-Light</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Main Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainController" customModule="SecurityTeam" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="G4j-8y-59T">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="701"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mf8-M7-rcQ">
+                                <rect key="frame" x="61.5" y="605" width="252" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7u-X3-rky">
+                                        <rect key="frame" x="0.0" y="0.0" width="112" height="35"/>
+                                        <rect key="contentStretch" x="0.0" y="0.5" width="1" height="1"/>
+                                        <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="17"/>
+                                        <state key="normal" title="Авторизоваться">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="hnS-Dj-rG9" kind="show" id="Qe8-1k-0V0"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TFp-Fp-8tw">
+                                        <rect key="frame" x="128" y="0.0" width="1" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1" id="1sh-Ij-fEQ"/>
+                                            <constraint firstAttribute="height" constant="35" id="kgH-1D-uE3"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v63-KK-eRX">
+                                        <rect key="frame" x="145" y="0.0" width="107" height="35"/>
+                                        <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="17"/>
+                                        <inset key="contentEdgeInsets" minX="9" minY="0.0" maxX="9" maxY="-2"/>
+                                        <state key="normal" title="Регистрация">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="hiZ-42-1uD" kind="show" id="oce-fb-uy8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="q7u-X3-rky" firstAttribute="firstBaseline" secondItem="v63-KK-eRX" secondAttribute="firstBaseline" id="r7n-Tp-RRv"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="G4j-8y-59T" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="0ES-Fe-30E"/>
+                            <constraint firstItem="G4j-8y-59T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1vI-PG-EdX"/>
+                            <constraint firstItem="mf8-M7-rcQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JMd-8f-C8T"/>
+                            <constraint firstItem="G4j-8y-59T" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="L39-Kn-fMO"/>
+                            <constraint firstItem="G4j-8y-59T" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OuX-5Y-Tuy"/>
+                            <constraint firstItem="mf8-M7-rcQ" firstAttribute="top" secondItem="G4j-8y-59T" secondAttribute="bottom" constant="-96" id="Y9z-ch-dhx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="130.40000000000001" y="111.57635467980296"/>
+        </scene>
+        <!--Registration Controller-->
+        <scene sceneID="4da-ue-mv0">
+            <objects>
+                <viewController id="hiZ-42-1uD" customClass="RegistrationController" customModule="SecurityTeam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="juU-6X-Mgc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKQ-EG-CPi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="zJU-5a-W42">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRV-YC-AVW">
+                                                <rect key="frame" x="142.5" y="52" width="90" height="90"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="90" id="YKl-ut-qj0"/>
+                                                    <constraint firstAttribute="height" constant="90" id="sBs-BO-8Jd"/>
+                                                </constraints>
+                                                <state key="normal" image="takeFoto"/>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YMr-gZ-hkY">
+                                                <rect key="frame" x="30" y="150" width="315" height="414"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yul-DX-JWT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="315" height="14.5"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="ФИО">
+                                                                <attributes>
+                                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <font key="NSFont" metaFont="cellTitle"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="8" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a8E-fE-rZY">
+                                                        <rect key="frame" x="0.0" y="22.5" width="315" height="30"/>
+                                                        <color key="backgroundColor" red="0.28623947500000002" green="0.28629469870000002" blue="0.28623601789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="hiZ-42-1uD" id="hKe-t6-xij"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QuE-2f-JUZ">
+                                                        <rect key="frame" x="0.0" y="60.5" width="315" height="14.5"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="E-mail">
+                                                                <attributes>
+                                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <font key="NSFont" metaFont="cellTitle"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="8" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oDR-AM-caX">
+                                                        <rect key="frame" x="0.0" y="83" width="315" height="30"/>
+                                                        <color key="backgroundColor" red="0.28623947500000002" green="0.28629469870000002" blue="0.28623601789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" textContentType="email"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="hiZ-42-1uD" id="xSx-ju-fkV"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTT-vA-swf">
+                                                        <rect key="frame" x="0.0" y="121" width="315" height="14.5"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Пароль">
+                                                                <attributes>
+                                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <font key="NSFont" metaFont="cellTitle"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="8" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wc3-fc-OdU">
+                                                        <rect key="frame" x="0.0" y="143.5" width="315" height="30"/>
+                                                        <color key="backgroundColor" red="0.28623947500000002" green="0.28629469870000002" blue="0.28623601789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="hiZ-42-1uD" id="IUT-bh-LCX"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzd-tA-v2u">
+                                                        <rect key="frame" x="0.0" y="181.5" width="315" height="14.5"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Повторите пароль">
+                                                                <attributes>
+                                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <font key="NSFont" metaFont="cellTitle"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="8" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sLM-AX-gXb">
+                                                        <rect key="frame" x="0.0" y="204" width="315" height="30"/>
+                                                        <color key="backgroundColor" red="0.28623947500000002" green="0.28629469870000002" blue="0.28623601789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="hiZ-42-1uD" id="b6U-pg-ihZ"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKx-rv-jap">
+                                                        <rect key="frame" x="0.0" y="242" width="315" height="14.5"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Тел.">
+                                                                <attributes>
+                                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <font key="NSFont" metaFont="cellTitle"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="8" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+7" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Km7-xG-gXb">
+                                                        <rect key="frame" x="0.0" y="264.5" width="315" height="30"/>
+                                                        <color key="backgroundColor" red="0.28623947500000002" green="0.28629469870000002" blue="0.28623601789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" textContentType="tel"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="hiZ-42-1uD" id="imc-wM-UMS"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwj-d7-gsL">
+                                                        <rect key="frame" x="0.0" y="302.5" width="315" height="14.5"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Фотография паспорта (1 разворот)">
+                                                                <attributes>
+                                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <font key="NSFont" metaFont="cellTitle"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="8" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="253" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1VU-CG-lVX">
+                                                        <rect key="frame" x="0.0" y="325" width="315" height="30"/>
+                                                        <color key="backgroundColor" red="0.28623947500000002" green="0.28629469870000002" blue="0.28623601789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="hiZ-42-1uD" id="0ZX-IV-woU"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDT-du-Nbe">
+                                                        <rect key="frame" x="0.0" y="363" width="315" height="14.5"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Фотография паспорта (регистрация)">
+                                                                <attributes>
+                                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <font key="NSFont" metaFont="cellTitle"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="8" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S6a-YY-UYo">
+                                                        <rect key="frame" x="0.0" y="385.5" width="315" height="28.5"/>
+                                                        <color key="backgroundColor" red="0.28623947500000002" green="0.28629469870000002" blue="0.28623601789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" secureTextEntry="YES" textContentType="new-password"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="hiZ-42-1uD" id="1cW-Sw-Wg1"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="414" id="zNj-Yo-ZJQ"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fKy-KG-mfi">
+                                                <rect key="frame" x="31" y="576" width="313" height="20"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y40-XQ-bY3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="5Uw-Q7-0sY"/>
+                                                            <constraint firstAttribute="width" constant="20" id="jko-Aa-SRi"/>
+                                                        </constraints>
+                                                        <state key="normal" image="checkBox"/>
+                                                        <state key="selected" image="checkboxmark"/>
+                                                        <connections>
+                                                            <action selector="checkBoxButton:" destination="hiZ-42-1uD" eventType="touchUpInside" id="EZW-YB-wCg"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="uyO-9X-20L">
+                                                        <rect key="frame" x="28" y="0.0" width="133.5" height="20"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Я прочитал и принимаю">
+                                                                <attributes>
+                                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <font key="NSFont" size="9" name="Calibri-Light"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment>
+                                                                <string key="content"> соглашения 
+с конечным пользователем</string>
+                                                                <attributes>
+                                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <font key="NSFont" size="9" name="Calibri-Light"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    <integer key="NSUnderline" value="1"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbO-HO-tdd">
+                                                        <rect key="frame" x="169.5" y="0.0" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="kWq-el-loL"/>
+                                                        </constraints>
+                                                        <state key="normal" image="checkBox"/>
+                                                        <state key="selected" image="checkboxmark"/>
+                                                        <connections>
+                                                            <action selector="checkBoxButton:" destination="hiZ-42-1uD" eventType="touchUpInside" id="yaP-gY-JNq"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="bjK-g0-jKj">
+                                                        <rect key="frame" x="197.5" y="0.0" width="115.5" height="20"/>
+                                                        <string key="text">Геопозиция для приложения 
+разрешена и включена на тел.</string>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="7"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="YMr-gZ-hkY" firstAttribute="top" secondItem="cRV-YC-AVW" secondAttribute="bottom" constant="7.9999999999999716" id="6qR-EG-TSt"/>
+                                            <constraint firstAttribute="trailing" secondItem="YMr-gZ-hkY" secondAttribute="trailing" constant="30" id="BY9-kb-MiR"/>
+                                            <constraint firstItem="fKy-KG-mfi" firstAttribute="centerX" secondItem="zJU-5a-W42" secondAttribute="centerX" id="N9M-w5-U4Z"/>
+                                            <constraint firstItem="cRV-YC-AVW" firstAttribute="centerX" secondItem="zJU-5a-W42" secondAttribute="centerX" id="Rml-kP-ab6"/>
+                                            <constraint firstItem="fKy-KG-mfi" firstAttribute="leading" secondItem="zJU-5a-W42" secondAttribute="leading" constant="31" id="S0X-tt-Upe"/>
+                                            <constraint firstItem="cRV-YC-AVW" firstAttribute="top" secondItem="zJU-5a-W42" secondAttribute="top" constant="52" id="Wc0-4l-dkp"/>
+                                            <constraint firstItem="YMr-gZ-hkY" firstAttribute="leading" secondItem="zJU-5a-W42" secondAttribute="leading" constant="30" id="XnG-4K-Wv9"/>
+                                            <constraint firstItem="YMr-gZ-hkY" firstAttribute="centerX" secondItem="zJU-5a-W42" secondAttribute="centerX" id="YMR-gh-R8H"/>
+                                            <constraint firstItem="fKy-KG-mfi" firstAttribute="top" secondItem="S6a-YY-UYo" secondAttribute="bottom" constant="12" id="c28-AH-zId"/>
+                                            <constraint firstAttribute="bottom" secondItem="YMr-gZ-hkY" secondAttribute="bottom" constant="103" id="puR-1M-Apt"/>
+                                            <constraint firstAttribute="trailing" secondItem="fKy-KG-mfi" secondAttribute="trailing" constant="31" id="zSr-IQ-0qE"/>
+                                        </constraints>
+                                    </scrollView>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBa-h4-gLx">
+                                        <rect key="frame" x="8" y="30" width="65" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="65" id="cg8-Dd-zz3"/>
+                                            <constraint firstAttribute="height" constant="20" id="qoa-NB-tdP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="17"/>
+                                        <state key="normal" image="back">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backBarButton:" destination="hiZ-42-1uD" eventType="touchUpInside" id="S5H-LM-5Dc"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rqe-0R-Aww">
+                                        <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFC-8q-tGe">
+                                                <rect key="frame" x="104" y="6.5" width="167" height="32"/>
+                                                <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="20"/>
+                                                <state key="normal" title="Зарегестрироваться">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.28623947500000002" green="0.28629469870000002" blue="0.28623601789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="UFC-8q-tGe" firstAttribute="centerY" secondItem="Rqe-0R-Aww" secondAttribute="centerY" id="HpH-nB-7N3"/>
+                                            <constraint firstAttribute="height" constant="45" id="bDG-gF-t1H"/>
+                                            <constraint firstItem="UFC-8q-tGe" firstAttribute="centerX" secondItem="Rqe-0R-Aww" secondAttribute="centerX" id="o9x-ZV-959"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstItem="zJU-5a-W42" firstAttribute="bottom" secondItem="Rqe-0R-Aww" secondAttribute="bottom" id="DOB-hZ-5Db"/>
+                                    <constraint firstItem="pBa-h4-gLx" firstAttribute="leading" secondItem="PKQ-EG-CPi" secondAttribute="leadingMargin" id="E2C-Ic-G1x"/>
+                                    <constraint firstItem="zJU-5a-W42" firstAttribute="leading" secondItem="PKQ-EG-CPi" secondAttribute="leading" id="LnS-SE-xUN"/>
+                                    <constraint firstItem="zJU-5a-W42" firstAttribute="top" secondItem="pBa-h4-gLx" secondAttribute="top" constant="-30" id="SrA-OJ-st0"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rqe-0R-Aww" secondAttribute="trailing" id="WAU-Lb-VmP"/>
+                                    <constraint firstAttribute="bottom" secondItem="zJU-5a-W42" secondAttribute="bottom" id="g12-cf-dtx"/>
+                                    <constraint firstAttribute="trailing" secondItem="zJU-5a-W42" secondAttribute="trailing" id="hIz-ga-rLB"/>
+                                    <constraint firstItem="zJU-5a-W42" firstAttribute="top" secondItem="PKQ-EG-CPi" secondAttribute="top" id="o5a-X4-2VE"/>
+                                    <constraint firstItem="Rqe-0R-Aww" firstAttribute="leading" secondItem="PKQ-EG-CPi" secondAttribute="leading" id="zoQ-9T-ck8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="PKQ-EG-CPi" secondAttribute="bottom" id="1D1-R3-PpP"/>
+                            <constraint firstItem="PKQ-EG-CPi" firstAttribute="trailing" secondItem="J6Z-uq-aId" secondAttribute="trailing" id="V6K-Ap-btb"/>
+                            <constraint firstItem="PKQ-EG-CPi" firstAttribute="top" secondItem="juU-6X-Mgc" secondAttribute="top" id="gRw-1f-qGd"/>
+                            <constraint firstItem="PKQ-EG-CPi" firstAttribute="leading" secondItem="J6Z-uq-aId" secondAttribute="leading" id="l5f-FV-P0g"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="J6Z-uq-aId"/>
+                    </view>
+                    <connections>
+                        <outlet property="checkPassword" destination="sLM-AX-gXb" id="pwR-XF-L2l"/>
+                        <outlet property="emailTextField" destination="oDR-AM-caX" id="v8D-Sk-plb"/>
+                        <outlet property="nameTextField" destination="a8E-fE-rZY" id="Z1r-91-srG"/>
+                        <outlet property="numberTextField" destination="Km7-xG-gXb" id="66Z-lz-n4v"/>
+                        <outlet property="passportFotoTextField" destination="1VU-CG-lVX" id="bKg-c7-5lo"/>
+                        <outlet property="passportRegistrationTextField" destination="S6a-YY-UYo" id="ajQ-mv-LfE"/>
+                        <outlet property="passwordTextField" destination="wc3-fc-OdU" id="YP1-f5-fOt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="whN-c1-apz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1026.4000000000001" y="-80.50974512743629"/>
+        </scene>
+        <!--Re Password Controller-->
+        <scene sceneID="xJ6-N1-e7S">
+            <objects>
+                <viewController id="EBh-Ac-fpk" customClass="RePasswordController" customModule="SecurityTeam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nB3-RX-tRN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XVJ-qg-nRT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="701"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLv-kM-OV4">
+                                        <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZe-lE-FmP">
+                                                <rect key="frame" x="159" y="6.5" width="57" height="32"/>
+                                                <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="20"/>
+                                                <state key="normal" title=" Далее">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="3bo-bo-xn4" kind="show" id="lhm-Nr-rKC"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.28623947501182556" green="0.28629469871520996" blue="0.28623601794242859" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="MZe-lE-FmP" firstAttribute="centerY" secondItem="aLv-kM-OV4" secondAttribute="centerY" id="4Hg-I9-MBa"/>
+                                            <constraint firstAttribute="height" constant="45" id="JTO-Ag-u3b"/>
+                                            <constraint firstItem="MZe-lE-FmP" firstAttribute="centerX" secondItem="aLv-kM-OV4" secondAttribute="centerX" id="qN3-mO-M2m"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahq-xa-AnF">
+                                        <rect key="frame" x="8" y="30" width="65" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="eyT-Ns-62h"/>
+                                            <constraint firstAttribute="width" constant="65" id="nqJ-HK-Ead"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="backBarButton:" destination="EBh-Ac-fpk" eventType="touchUpInside" id="U2F-ea-Mr3"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Востановление пароля" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atM-nH-094">
+                                        <rect key="frame" x="82" y="100" width="211.5" height="22"/>
+                                        <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIS-sv-cVT">
+                                        <rect key="frame" x="40" y="157.5" width="63" height="15"/>
+                                        <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kuK-9c-plo">
+                                        <rect key="frame" x="30" y="178.5" width="315" height="30"/>
+                                        <color key="backgroundColor" red="0.28623947501182556" green="0.28629469871520996" blue="0.28623601794242859" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" textContentType="email"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstItem="kuK-9c-plo" firstAttribute="leading" secondItem="XVJ-qg-nRT" secondAttribute="leading" constant="30" id="037-79-5Tk"/>
+                                    <constraint firstItem="atM-nH-094" firstAttribute="centerX" secondItem="XVJ-qg-nRT" secondAttribute="centerX" id="8EH-hy-xKK"/>
+                                    <constraint firstItem="HIS-sv-cVT" firstAttribute="leading" secondItem="XVJ-qg-nRT" secondAttribute="leading" constant="40" id="BNB-6o-DTa"/>
+                                    <constraint firstItem="Ahq-xa-AnF" firstAttribute="top" secondItem="XVJ-qg-nRT" secondAttribute="top" constant="30" id="Ce3-4n-nAP"/>
+                                    <constraint firstAttribute="trailing" secondItem="aLv-kM-OV4" secondAttribute="trailing" id="DI2-lW-M0Z"/>
+                                    <constraint firstItem="atM-nH-094" firstAttribute="top" secondItem="XVJ-qg-nRT" secondAttribute="top" constant="100" id="KmA-MH-Gt4"/>
+                                    <constraint firstItem="kuK-9c-plo" firstAttribute="centerX" secondItem="XVJ-qg-nRT" secondAttribute="centerX" id="UeR-8O-Dsv"/>
+                                    <constraint firstAttribute="trailing" secondItem="kuK-9c-plo" secondAttribute="trailing" constant="30" id="Wq3-pW-Fci"/>
+                                    <constraint firstAttribute="bottom" secondItem="aLv-kM-OV4" secondAttribute="bottom" constant="34" id="Xop-cx-YQR"/>
+                                    <constraint firstItem="HIS-sv-cVT" firstAttribute="top" secondItem="atM-nH-094" secondAttribute="bottom" constant="35.666666666666671" id="kFJ-Gg-kBL"/>
+                                    <constraint firstItem="kuK-9c-plo" firstAttribute="top" secondItem="atM-nH-094" secondAttribute="bottom" constant="56.666666666666671" id="l0g-ta-WeP"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="HIS-sv-cVT" secondAttribute="trailing" constant="272" id="lcV-pV-oOs"/>
+                                    <constraint firstItem="Ahq-xa-AnF" firstAttribute="leading" secondItem="XVJ-qg-nRT" secondAttribute="leadingMargin" id="mqz-GY-PVQ"/>
+                                    <constraint firstItem="aLv-kM-OV4" firstAttribute="leading" secondItem="XVJ-qg-nRT" secondAttribute="leading" id="zY5-WC-pKA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XVJ-qg-nRT" firstAttribute="bottom" secondItem="gT7-U6-pKy" secondAttribute="bottom" constant="34" id="KRx-3V-Lki"/>
+                            <constraint firstItem="XVJ-qg-nRT" firstAttribute="leading" secondItem="gT7-U6-pKy" secondAttribute="leading" id="Ru0-Uq-DWG"/>
+                            <constraint firstItem="XVJ-qg-nRT" firstAttribute="trailing" secondItem="gT7-U6-pKy" secondAttribute="trailing" id="Sj2-yS-V7Z"/>
+                            <constraint firstItem="XVJ-qg-nRT" firstAttribute="top" secondItem="nB3-RX-tRN" secondAttribute="top" id="hv9-QU-gsg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gT7-U6-pKy"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ipG-qY-egs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="993" y="1431"/>
+        </scene>
+        <!--Auth Controller-->
+        <scene sceneID="Xj8-ci-IIH">
+            <objects>
+                <viewController id="hnS-Dj-rG9" customClass="AuthController" customModule="SecurityTeam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y2O-gB-p8B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyX-dA-IMd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="701"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LSi-hK-Oad">
+                                        <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gq1-gh-KW8">
+                                                <rect key="frame" x="162" y="6.5" width="51" height="32"/>
+                                                <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="20"/>
+                                                <state key="normal" title="Войти">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.28623947500000002" green="0.28629469870000002" blue="0.28623601789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Gq1-gh-KW8" firstAttribute="centerX" secondItem="LSi-hK-Oad" secondAttribute="centerX" id="Eqx-RA-FfN"/>
+                                            <constraint firstItem="Gq1-gh-KW8" firstAttribute="centerY" secondItem="LSi-hK-Oad" secondAttribute="centerY" id="o7c-ea-ig2"/>
+                                            <constraint firstAttribute="height" constant="45" id="oeP-1c-gvA"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGm-OF-J60">
+                                        <rect key="frame" x="8" y="30" width="65" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="65" id="hpw-oI-kS8"/>
+                                            <constraint firstAttribute="height" constant="20" id="w53-y2-KaP"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="backBarButton:" destination="hnS-Dj-rG9" eventType="touchUpInside" id="RAV-z5-pDz"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Авторизация" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGJ-xA-aHl">
+                                        <rect key="frame" x="128" y="100" width="119" height="22"/>
+                                        <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4il-SG-wUc">
+                                        <rect key="frame" x="30" y="134" width="315" height="105"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAn-L5-4GW">
+                                                <rect key="frame" x="0.0" y="0.0" width="45.5" height="15"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="E-mail">
+                                                        <attributes>
+                                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <font key="NSFont" size="15" name="Calibri-Light"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="8" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kk1-uM-nd5">
+                                                <rect key="frame" x="0.0" y="20" width="315" height="30"/>
+                                                <color key="backgroundColor" red="0.28623947500000002" green="0.28629469870000002" blue="0.28623601789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" textContentType="email"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHN-wr-c6R">
+                                                <rect key="frame" x="0.0" y="55" width="54" height="15"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Пароль">
+                                                        <attributes>
+                                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <font key="NSFont" size="15" name="Calibri-Light"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="8" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8iT-7q-P7g">
+                                                <rect key="frame" x="0.0" y="75" width="315" height="30"/>
+                                                <color key="backgroundColor" red="0.28623947500000002" green="0.28629469870000002" blue="0.28623601789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="8iT-7q-P7g" firstAttribute="leading" secondItem="4il-SG-wUc" secondAttribute="leading" id="1aH-UQ-RXB"/>
+                                            <constraint firstAttribute="trailing" secondItem="kk1-uM-nd5" secondAttribute="trailing" id="ISK-yq-fun"/>
+                                            <constraint firstAttribute="trailing" secondItem="8iT-7q-P7g" secondAttribute="trailing" id="ke5-ZV-Ibm"/>
+                                            <constraint firstItem="kk1-uM-nd5" firstAttribute="leading" secondItem="4il-SG-wUc" secondAttribute="leading" id="rLa-9O-xBE"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dd9-FL-32F">
+                                        <rect key="frame" x="30" y="237" width="94" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="26" id="Pvc-4a-NzQ"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="94" id="UvL-Qm-aWY"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Забыли пароль?">
+                                                    <attributes>
+                                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <font key="NSFont" size="12" name="Calibri-Light"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        <integer key="NSUnderline" value="1"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <segue destination="EBh-Ac-fpk" kind="show" id="SuL-ac-01W"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VW-Ya-zAm">
+                                        <rect key="frame" x="30" y="291" width="315" height="24"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="При авторизации вы принимаете условие ">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="12" name="Calibri-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">соглашения 
+с конечным пользователем</string>
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="12" name="Calibri-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    <integer key="NSUnderline" value="1"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=".">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="12" name="Calibri-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstItem="3VW-Ya-zAm" firstAttribute="top" secondItem="8iT-7q-P7g" secondAttribute="bottom" constant="52" id="03K-dm-szb"/>
+                                    <constraint firstItem="3VW-Ya-zAm" firstAttribute="leading" secondItem="dyX-dA-IMd" secondAttribute="leading" constant="30" id="1cI-2N-i4D"/>
+                                    <constraint firstItem="4il-SG-wUc" firstAttribute="leading" secondItem="dyX-dA-IMd" secondAttribute="leading" constant="30" id="AsC-B0-9aZ"/>
+                                    <constraint firstItem="3VW-Ya-zAm" firstAttribute="centerX" secondItem="dyX-dA-IMd" secondAttribute="centerX" id="BhF-o2-peb"/>
+                                    <constraint firstAttribute="trailing" secondItem="LSi-hK-Oad" secondAttribute="trailing" id="DW5-ly-DZI"/>
+                                    <constraint firstItem="nGm-OF-J60" firstAttribute="leading" secondItem="dyX-dA-IMd" secondAttribute="leadingMargin" id="Fed-Gj-BBT"/>
+                                    <constraint firstItem="4il-SG-wUc" firstAttribute="centerX" secondItem="dyX-dA-IMd" secondAttribute="centerX" id="FyH-6B-3Gc"/>
+                                    <constraint firstItem="nGm-OF-J60" firstAttribute="top" secondItem="dyX-dA-IMd" secondAttribute="top" constant="30" id="Gs2-fZ-w9S"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="dd9-FL-32F" secondAttribute="trailing" constant="251" id="M33-t9-lzc"/>
+                                    <constraint firstItem="LSi-hK-Oad" firstAttribute="leading" secondItem="dyX-dA-IMd" secondAttribute="leading" id="MQ8-6H-9Jn"/>
+                                    <constraint firstItem="4il-SG-wUc" firstAttribute="top" secondItem="CGJ-xA-aHl" secondAttribute="bottom" constant="12" id="SPh-vg-C2G"/>
+                                    <constraint firstItem="CGJ-xA-aHl" firstAttribute="top" secondItem="dyX-dA-IMd" secondAttribute="top" constant="100" id="Usn-ur-MJf"/>
+                                    <constraint firstItem="dd9-FL-32F" firstAttribute="leading" secondItem="4il-SG-wUc" secondAttribute="leading" id="Wmh-u2-m8b"/>
+                                    <constraint firstItem="CGJ-xA-aHl" firstAttribute="centerX" secondItem="dyX-dA-IMd" secondAttribute="centerX" id="Y2r-wy-kPm"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3VW-Ya-zAm" secondAttribute="trailing" constant="30" id="bPg-jw-ewP"/>
+                                    <constraint firstAttribute="bottom" secondItem="LSi-hK-Oad" secondAttribute="bottom" constant="34" id="gsc-WB-Zqn"/>
+                                    <constraint firstAttribute="trailing" secondItem="4il-SG-wUc" secondAttribute="trailing" constant="30" id="qIA-9Z-BmB"/>
+                                    <constraint firstItem="dd9-FL-32F" firstAttribute="top" secondItem="4il-SG-wUc" secondAttribute="bottom" constant="-2" id="suC-VJ-X6N"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dyX-dA-IMd" firstAttribute="leading" secondItem="Lhg-va-aJm" secondAttribute="leading" id="TY7-dy-cfz"/>
+                            <constraint firstItem="dyX-dA-IMd" firstAttribute="trailing" secondItem="Lhg-va-aJm" secondAttribute="trailing" id="X1A-Hp-Zpm"/>
+                            <constraint firstItem="dyX-dA-IMd" firstAttribute="bottom" secondItem="Lhg-va-aJm" secondAttribute="bottom" constant="34" id="uR9-ce-SFi"/>
+                            <constraint firstItem="dyX-dA-IMd" firstAttribute="top" secondItem="Y2O-gB-p8B" secondAttribute="top" id="ws2-TZ-zZ4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lhg-va-aJm"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IZP-fT-RZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="992.79999999999995" y="701.97044334975374"/>
+        </scene>
+        <!--New Pass Controller-->
+        <scene sceneID="yiA-Mc-uSG">
+            <objects>
+                <viewController id="3bo-bo-xn4" customClass="NewPassController" customModule="SecurityTeam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oeS-4d-xqE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBz-n3-JI0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="701"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jUJ-RE-ydb">
+                                        <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e39-Y3-NHT">
+                                                <rect key="frame" x="161.5" y="6.5" width="52" height="32"/>
+                                                <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="20"/>
+                                                <state key="normal" title="Далее">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.28623947500000002" green="0.28629469870000002" blue="0.28623601789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="IyA-oa-6Pe"/>
+                                            <constraint firstItem="e39-Y3-NHT" firstAttribute="centerX" secondItem="jUJ-RE-ydb" secondAttribute="centerX" id="oEh-dn-gel"/>
+                                            <constraint firstItem="e39-Y3-NHT" firstAttribute="centerY" secondItem="jUJ-RE-ydb" secondAttribute="centerY" id="wHj-g8-UA1"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IW9-Ao-v7i">
+                                        <rect key="frame" x="8" y="30" width="65" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="65" id="GAZ-48-d33"/>
+                                            <constraint firstAttribute="height" constant="20" id="Kg9-8J-d8S"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="backBarButton:" destination="3bo-bo-xn4" eventType="touchUpInside" id="v5b-6g-3vl"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Востановление пароля" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ou-E1-JfQ">
+                                        <rect key="frame" x="82" y="100" width="211.5" height="22"/>
+                                        <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="szW-bb-WhN">
+                                        <rect key="frame" x="30" y="150" width="315" height="175"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBt-Yk-t37">
+                                                <rect key="frame" x="0.0" y="0.0" width="315" height="15"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Код из письма">
+                                                        <attributes>
+                                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <font key="NSFont" size="15" name="Calibri"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="8" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kIy-OU-1ye">
+                                                <rect key="frame" x="0.0" y="23" width="315" height="30"/>
+                                                <color key="backgroundColor" red="0.28623947500000002" green="0.28629469870000002" blue="0.28623601789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRK-mf-syq">
+                                                <rect key="frame" x="0.0" y="61" width="315" height="15"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Новый пароль">
+                                                        <attributes>
+                                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <font key="NSFont" size="15" name="Calibri-Light"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="8" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4P0-TN-BcA">
+                                                <rect key="frame" x="0.0" y="84" width="315" height="30"/>
+                                                <color key="backgroundColor" red="0.28623947500000002" green="0.28629469870000002" blue="0.28623601789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wei-3T-z8A">
+                                                <rect key="frame" x="0.0" y="122" width="315" height="15"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Востановить пароль">
+                                                        <attributes>
+                                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <font key="NSFont" size="15" name="Calibri-Light"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="8" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yeq-kM-cU3">
+                                                <rect key="frame" x="0.0" y="145" width="315" height="30"/>
+                                                <color key="backgroundColor" red="0.28623947500000002" green="0.28629469870000002" blue="0.28623601789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="yeq-kM-cU3" secondAttribute="trailing" id="Blt-3O-d00"/>
+                                            <constraint firstAttribute="trailing" secondItem="kIy-OU-1ye" secondAttribute="trailing" id="KWO-kK-EBR"/>
+                                            <constraint firstAttribute="trailing" secondItem="4P0-TN-BcA" secondAttribute="trailing" id="Q8V-d4-2Y8"/>
+                                            <constraint firstItem="4P0-TN-BcA" firstAttribute="leading" secondItem="szW-bb-WhN" secondAttribute="leading" id="TGU-25-aZe"/>
+                                            <constraint firstItem="yeq-kM-cU3" firstAttribute="leading" secondItem="szW-bb-WhN" secondAttribute="leading" id="bMw-Bn-uyO"/>
+                                            <constraint firstItem="kIy-OU-1ye" firstAttribute="leading" secondItem="szW-bb-WhN" secondAttribute="leading" id="fcT-nr-1kV"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstItem="0ou-E1-JfQ" firstAttribute="centerX" secondItem="LBz-n3-JI0" secondAttribute="centerX" id="3wm-EJ-r9D"/>
+                                    <constraint firstAttribute="bottom" secondItem="jUJ-RE-ydb" secondAttribute="bottom" constant="34" id="5J6-3N-qVG"/>
+                                    <constraint firstAttribute="trailing" secondItem="jUJ-RE-ydb" secondAttribute="trailing" id="Bjw-5n-eFa"/>
+                                    <constraint firstItem="IW9-Ao-v7i" firstAttribute="leading" secondItem="LBz-n3-JI0" secondAttribute="leadingMargin" id="MkR-CG-wsR"/>
+                                    <constraint firstAttribute="trailing" secondItem="szW-bb-WhN" secondAttribute="trailing" constant="30" id="Njc-ix-n7s"/>
+                                    <constraint firstItem="szW-bb-WhN" firstAttribute="top" secondItem="0ou-E1-JfQ" secondAttribute="bottom" constant="28" id="aTL-5Y-MnZ"/>
+                                    <constraint firstItem="jUJ-RE-ydb" firstAttribute="leading" secondItem="LBz-n3-JI0" secondAttribute="leading" id="gcH-A2-286"/>
+                                    <constraint firstItem="szW-bb-WhN" firstAttribute="centerX" secondItem="LBz-n3-JI0" secondAttribute="centerX" id="lAv-4R-EqD"/>
+                                    <constraint firstItem="0ou-E1-JfQ" firstAttribute="top" secondItem="LBz-n3-JI0" secondAttribute="top" constant="100" id="lep-cB-caF"/>
+                                    <constraint firstItem="szW-bb-WhN" firstAttribute="leading" secondItem="LBz-n3-JI0" secondAttribute="leading" constant="30" id="rJ7-Vv-KXb"/>
+                                    <constraint firstItem="IW9-Ao-v7i" firstAttribute="top" secondItem="LBz-n3-JI0" secondAttribute="top" constant="30" id="tIp-3B-6Fn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LBz-n3-JI0" firstAttribute="trailing" secondItem="9pV-rz-cjs" secondAttribute="trailing" id="52c-S7-skT"/>
+                            <constraint firstItem="LBz-n3-JI0" firstAttribute="top" secondItem="oeS-4d-xqE" secondAttribute="top" id="A7C-aE-aU4"/>
+                            <constraint firstItem="LBz-n3-JI0" firstAttribute="bottom" secondItem="9pV-rz-cjs" secondAttribute="bottom" constant="34" id="syE-wt-FH6"/>
+                            <constraint firstItem="LBz-n3-JI0" firstAttribute="leading" secondItem="9pV-rz-cjs" secondAttribute="leading" id="tgC-SJ-r47"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9pV-rz-cjs"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v4a-sN-2Ia" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1869.5999999999999" y="1431.2807881773399"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back" width="141.5" height="45"/>
+        <image name="background" width="1080" height="1918"/>
+        <image name="checkBox" width="42" height="42"/>
+        <image name="checkboxmark" width="42" height="42"/>
+        <image name="takeFoto" width="230" height="230"/>
+    </resources>
 </document>

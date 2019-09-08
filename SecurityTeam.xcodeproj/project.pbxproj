@@ -7,21 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		814909E92321CD52000F3510 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814909E82321CD52000F3510 /* AuthController.swift */; };
+		814909EB2321CF05000F3510 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814909EA2321CF05000F3510 /* RegistrationController.swift */; };
 		81504453232055A800CC025D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81504452232055A800CC025D /* AppDelegate.swift */; };
-		81504455232055A800CC025D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81504454232055A800CC025D /* ViewController.swift */; };
+		81504455232055A800CC025D /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81504454232055A800CC025D /* MainController.swift */; };
 		81504458232055A800CC025D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81504456232055A800CC025D /* Main.storyboard */; };
 		8150445A232055AA00CC025D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81504459232055AA00CC025D /* Assets.xcassets */; };
 		8150445D232055AA00CC025D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8150445B232055AA00CC025D /* LaunchScreen.storyboard */; };
+		816EDF75232256030082E65B /* RePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816EDF74232256030082E65B /* RePasswordController.swift */; };
+		816EDF77232256E50082E65B /* NewPassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816EDF76232256E50082E65B /* NewPassController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		814909E82321CD52000F3510 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		814909EA2321CF05000F3510 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		814909EC2321E7E2000F3510 /* calibril.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = calibril.ttf; path = ../calibril.ttf; sourceTree = "<group>"; };
 		8150444F232055A800CC025D /* SecurityTeam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecurityTeam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81504452232055A800CC025D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		81504454232055A800CC025D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		81504454232055A800CC025D /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		81504457232055A800CC025D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		81504459232055AA00CC025D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8150445C232055AA00CC025D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8150445E232055AA00CC025D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		816EDF74232256030082E65B /* RePasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePasswordController.swift; sourceTree = "<group>"; };
+		816EDF76232256E50082E65B /* NewPassController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPassController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +44,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		814909EE2321F8B4000F3510 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				814909EC2321E7E2000F3510 /* calibril.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		81504446232055A800CC025D = {
 			isa = PBXGroup;
 			children = (
@@ -55,13 +72,26 @@
 			isa = PBXGroup;
 			children = (
 				81504452232055A800CC025D /* AppDelegate.swift */,
-				81504454232055A800CC025D /* ViewController.swift */,
-				81504456232055A800CC025D /* Main.storyboard */,
+				817D6F0B23232F3700E63605 /* Controllers */,
 				81504459232055AA00CC025D /* Assets.xcassets */,
+				81504456232055A800CC025D /* Main.storyboard */,
+				814909EE2321F8B4000F3510 /* fonts */,
 				8150445B232055AA00CC025D /* LaunchScreen.storyboard */,
 				8150445E232055AA00CC025D /* Info.plist */,
 			);
 			path = SecurityTeam;
+			sourceTree = "<group>";
+		};
+		817D6F0B23232F3700E63605 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				81504454232055A800CC025D /* MainController.swift */,
+				814909E82321CD52000F3510 /* AuthController.swift */,
+				816EDF74232256030082E65B /* RePasswordController.swift */,
+				814909EA2321CF05000F3510 /* RegistrationController.swift */,
+				816EDF76232256E50082E65B /* NewPassController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +165,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81504455232055A800CC025D /* ViewController.swift in Sources */,
+				81504455232055A800CC025D /* MainController.swift in Sources */,
+				816EDF75232256030082E65B /* RePasswordController.swift in Sources */,
+				814909E92321CD52000F3510 /* AuthController.swift in Sources */,
+				814909EB2321CF05000F3510 /* RegistrationController.swift in Sources */,
 				81504453232055A800CC025D /* AppDelegate.swift in Sources */,
+				816EDF77232256E50082E65B /* NewPassController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +319,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A5U6B2N2Y5;
 				INFOPLIST_FILE = SecurityTeam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -292,7 +327,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = freshlife.SecurityTeam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -303,6 +338,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A5U6B2N2Y5;
 				INFOPLIST_FILE = SecurityTeam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +346,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = freshlife.SecurityTeam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
